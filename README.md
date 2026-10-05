@@ -23,12 +23,27 @@ A RESTful API for managing tasks, built with **FastAPI** and **SQLite**.
 
 ## Quick Start
 
+### Windows (one double-click)
+
+1. Download or clone the repo:
+   ```bash
+   git clone https://github.com/DaitenGarza/task-manager-api.git
+   ```
+2. Open the `task-manager-api` folder and double-click **`run.bat`**.
+
+`run.bat` installs Python 3.12 if it's missing, creates a private virtual
+environment, installs the requirements, starts the API, and opens the
+interactive docs at **http://localhost:8000/docs**. The first run takes a
+minute or two; later runs start in seconds. Press **Ctrl+C** in the window
+(or just close it) to stop the server.
+
+### Manual setup (Windows, macOS, or Linux)
+
 ```bash
-# Clone the repo
-git clone https://github.com/YOUR_USERNAME/task-manager-api.git
+git clone https://github.com/DaitenGarza/task-manager-api.git
 cd task-manager-api
 
-# Install dependencies
+# Install dependencies (a virtual environment is recommended)
 pip install -r requirements.txt
 
 # Run the server
@@ -36,6 +51,9 @@ uvicorn main:app --reload
 ```
 
 Open **http://localhost:8000/docs** for the interactive API playground.
+
+> Tested on Python 3.12. The launcher uses Python 3.10-3.13, because the
+> pinned package versions predate Python 3.14.
 
 ## API Endpoints
 
@@ -87,6 +105,8 @@ task-manager-api/
 ├── schemas.py        # Pydantic request/response schemas
 ├── database.py       # Database connection setup
 ├── requirements.txt  # Python dependencies
+├── run.bat           # One-click Windows launcher
+├── run.ps1           # Launcher logic (used by run.bat)
 ├── render.yaml       # Render deployment config
 └── README.md
 ```
